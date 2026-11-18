@@ -1,31 +1,19 @@
-# Age of Conquest — prototype 0.2
+# Age of Conquest — prototype 0.4
 
-Application web progressive (PWA), pensée pour fonctionner localement dans le navigateur et être publiée sur GitHub Pages.
+Prototype de grande campagne solo fantasy en français.
 
-## Fichiers
-- `index.html` : structure de l'interface
-- `styles.css` : présentation responsive
-- `app.js` : règles et état de campagne
-- `manifest.webmanifest` : installation PWA
-- `sw.js` : cache hors ligne
-- `icon.svg` : icône
+## Lancer
+Ouvrir `index.html` dans un navigateur moderne ou publier le dossier à la racine d’un dépôt GitHub Pages.
 
-## Fonctions présentes
-- Sélection parmi six factions
-- Carte SVG avec provinces sélectionnables
-- Trésorerie, revenus, garnisons et bâtiments
-- Recrutement, déplacement d'armée et résolution automatique des assauts
-- Passage de tour et événements rivaux simples
-- Sauvegarde locale automatique
-- Export/import JSON de campagne
+## Fonctionnalités de cette version
+- Six factions jouables avec chefs, ressources et listes de recrutement distinctes.
+- Carte de campagne régionale illustrée, sélection des provinces et frontières de faction.
+- Gestion de l’or, du fer, de la magie et de la nourriture.
+- Recrutement, bâtiments, revenus, garnisons, déplacements et résolution abstraite des batailles.
+- Diplomatie simple, technologies, seigneurs, chroniques, export/import JSON.
+- Sauvegarde locale du navigateur et cache PWA.
 
-## Publication GitHub Pages
-1. Créer un dépôt GitHub public nommé `age-of-conquest`.
-2. Ajouter tous les fichiers de ce dossier à la racine du dépôt.
-3. Dans Settings > Pages, choisir Deploy from a branch, `main`, `/ (root)`.
-4. Ouvrir l'URL GitHub Pages dans Safari. Pour l'installation iPhone : Partager > Sur l'écran d'accueil.
+## Limites connues
+Ceci reste un prototype jouable, pas un jeu Total War complet. La carte illustrée est une interprétation artistique et la géographie/provinces restent simplifiées. Les portraits et vignettes d’unités sont des illustrations de maquette, pas une galerie officielle exhaustive. Les batailles sont résolues automatiquement, sans champ de bataille tactique. L’IA stratégique et la diplomatie sont encore rudimentaires.
 
-Aucun serveur ni compte n'est requis pour jouer. La sauvegarde reste dans le stockage local du navigateur. Exporter régulièrement un JSON pour conserver une copie.
-
-## Limites connues du prototype
-La carte est schématique et les règles de bataille/IA sont provisoires. La prochaine étape est d'améliorer la géographie, le système d'armées et l'IA sans casser le format de sauvegarde.
+Les noms et univers Warhammer appartiennent à leurs ayants droit. Projet de fan non officiel.
