@@ -1,34 +1,18 @@
-# Age of Conquest — prototype 0.4
+# Age of Conquest — version 0.8
 
-Prototype de grande campagne solo fantasy en français.
+Prototype de grande stratégie solo dans le Vieux Monde de Warhammer Fantasy.
 
-## Lancer
-Ouvrir `index.html` dans un navigateur moderne ou publier le dossier à la racine d’un dépôt GitHub Pages.
+## Nouveautés 0.8
+- Retour à une carte 2D de style atlas médiéval sur parchemin.
+- Provinces colorées selon leur propriétaire et sélectionnables.
+- Ajout de l’Ostermark, du Mootland et d’Athel Loren.
+- Villes, cités fortifiées et capitales affichées sur la carte.
+- Garnisons urbaines ennemies indiquées par des badges et détaillées dans la fiche de province.
+- Défense des villes prise en compte lors des batailles et changement de contrôle après conquête.
+- Zoom, déplacement de la carte et commandes adaptées au tactile.
 
-## Fonctionnalités de cette version
-- Six factions jouables avec chefs, ressources et listes de recrutement distinctes.
-- Carte de campagne régionale illustrée, sélection des provinces et frontières de faction.
-- Gestion de l’or, du fer, de la magie et de la nourriture.
-- Recrutement, bâtiments, revenus, garnisons, déplacements et résolution abstraite des batailles.
-- Diplomatie simple, technologies, seigneurs, chroniques, export/import JSON.
-- Sauvegarde locale du navigateur et cache PWA.
+## Installation
+Remplacer `index.html`, `app.js`, `styles.css`, `sw.js` et `README.md` à la racine du dépôt GitHub Pages. Conserver le dossier `assets` et ses images.
 
-## Limites connues
-Ceci reste un prototype jouable, pas un jeu Total War complet. La carte illustrée est une interprétation artistique et la géographie/provinces restent simplifiées. Les portraits et vignettes d’unités sont des illustrations de maquette, pas une galerie officielle exhaustive. Les batailles sont résolues automatiquement, sans champ de bataille tactique. L’IA stratégique et la diplomatie sont encore rudimentaires.
-
-Les noms et univers Warhammer appartiennent à leurs ayants droit. Projet de fan non officiel.
-
-
-Version 0.5 : carte de campagne agrandie sur mobile, images avec chemins de secours et cache mis à jour. Les fichiers d’images doivent être dans /assets avec leurs noms exacts.
-
-
-## Version 0.6 — carte et IA
-
-- Carte régionale originale inspirée de la géographie du Vieux Monde : Norsca, Pays des Trolls, Désolations du Chaos, Kislev, provinces impériales, Bretonnie, Estalie, Tilée, Sylvanie, Terres Arides, Montagnes du Bord du Monde et Terres Sombres.
-- Principales villes affichées : Marienburg, Middenheim, Altdorf, Talabheim, Nuln, Kislev, Drakenhof, Karaz-a-Karak, Couronne et Remas.
-- Zoom avant/arrière et carte défilable sur mobile.
-- Armées ennemies visibles par marqueurs rouges avec leur faction et leurs effectifs (infobulle).
-- IA plus offensive : marche vers les provinces du joueur, attaque les positions faibles, conquiert des territoires, renforce ses armées et reconstitue ses forces.
-- Migration des anciennes sauvegardes pour ajouter les nouvelles régions sans perdre la campagne existante.
-
-La carte est une reconstruction stratégique originale à partir de références géographiques de l'univers ; les frontières et coordonnées sont une interprétation de jeu et ne prétendent pas remplacer une carte officielle Games Workshop.
+## Limites
+La carte est une reconstruction vectorielle originale inspirée des atlas communautaires et des sources de jeu de rôle Warhammer. Les frontières et coordonnées restent une interprétation de prototype et doivent être affinées province par province. Les effectifs de garnison sont des valeurs de jeu, non des chiffres canoniques du lore.
