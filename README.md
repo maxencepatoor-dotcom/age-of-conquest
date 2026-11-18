@@ -17,3 +17,6 @@ Ouvrir `index.html` dans un navigateur moderne ou publier le dossier à la racin
 Ceci reste un prototype jouable, pas un jeu Total War complet. La carte illustrée est une interprétation artistique et la géographie/provinces restent simplifiées. Les portraits et vignettes d’unités sont des illustrations de maquette, pas une galerie officielle exhaustive. Les batailles sont résolues automatiquement, sans champ de bataille tactique. L’IA stratégique et la diplomatie sont encore rudimentaires.
 
 Les noms et univers Warhammer appartiennent à leurs ayants droit. Projet de fan non officiel.
+
+
+Version 0.5 : carte de campagne agrandie sur mobile, images avec chemins de secours et cache mis à jour. Les fichiers d’images doivent être dans /assets avec leurs noms exacts.
