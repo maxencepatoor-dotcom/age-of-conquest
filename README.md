@@ -20,3 +20,15 @@ Les noms et univers Warhammer appartiennent à leurs ayants droit. Projet de fan
 
 
 Version 0.5 : carte de campagne agrandie sur mobile, images avec chemins de secours et cache mis à jour. Les fichiers d’images doivent être dans /assets avec leurs noms exacts.
+
+
+## Version 0.6 — carte et IA
+
+- Carte régionale originale inspirée de la géographie du Vieux Monde : Norsca, Pays des Trolls, Désolations du Chaos, Kislev, provinces impériales, Bretonnie, Estalie, Tilée, Sylvanie, Terres Arides, Montagnes du Bord du Monde et Terres Sombres.
+- Principales villes affichées : Marienburg, Middenheim, Altdorf, Talabheim, Nuln, Kislev, Drakenhof, Karaz-a-Karak, Couronne et Remas.
+- Zoom avant/arrière et carte défilable sur mobile.
+- Armées ennemies visibles par marqueurs rouges avec leur faction et leurs effectifs (infobulle).
+- IA plus offensive : marche vers les provinces du joueur, attaque les positions faibles, conquiert des territoires, renforce ses armées et reconstitue ses forces.
+- Migration des anciennes sauvegardes pour ajouter les nouvelles régions sans perdre la campagne existante.
+
+La carte est une reconstruction stratégique originale à partir de références géographiques de l'univers ; les frontières et coordonnées sont une interprétation de jeu et ne prétendent pas remplacer une carte officielle Games Workshop.

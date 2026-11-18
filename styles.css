@@ -5,3 +5,18 @@
 .map-frame{padding:10px}.map{min-height:620px;background-position:center center;background-size:cover}.map svg{height:620px;min-height:620px}.map-title b{font-size:16px}.map-legend{font-size:14px}.commander img{width:112px;height:112px}.unit-chip img{width:48px;height:58px}.lord-card img,.recruit-card img{width:112px;height:132px}
 @media(max-width:850px){.map-layout{grid-template-columns:1fr}.map{min-height:68vh;height:68vh}.map svg{height:68vh;min-height:68vh}.map-frame{padding:7px}.map-title{font-size:14px}.side-stack{display:grid;grid-template-columns:1fr}.campaign-head{gap:10px}.commander img{width:90px;height:100px}}
 @media(max-width:480px){.map{min-height:65vh;height:65vh}.map svg{height:65vh;min-height:65vh}.maplabel{font-size:12px}.commander img{width:82px;height:92px}.unit-chip img{width:44px;height:54px}}
+/* Carte stratégique étendue : géographie du Vieux Monde et armées visibles */
+.map{background:#172a2b;min-height:620px;height:min(78vh,900px);overflow:auto;overscroll-behavior:contain;position:relative}
+.map svg{width:100%;height:auto;min-height:0;display:block;filter:drop-shadow(0 2px 4px #000);transform-origin:center center;transition:width .2s,transform .2s}
+.map-zoom{position:sticky;top:8px;left:8px;z-index:4;display:flex;gap:5px;width:max-content;margin:8px 0 -42px 8px}
+.map-zoom button{font:700 19px Georgia;min-width:38px;padding:5px 10px;background:#241b12dd;border:1px solid #d4ad66;border-radius:4px}
+.region{stroke:#e6d2a3;stroke-width:3;fill-opacity:.48;vector-effect:non-scaling-stroke}
+.region.own{fill:#c18a2d;stroke:#f6d58b}.region.enemy{fill:#9d3030;stroke:#f2aaa0}.region.neutral{fill:#777c57;stroke:#d9d0a5}
+.region.selected{stroke:#fff5d8;stroke-width:6;fill-opacity:.72}
+.maplabel{font-size:17px;letter-spacing:.4px;paint-order:stroke;stroke:#211a12;stroke-width:5px;stroke-linejoin:round}
+.army-marker circle{stroke:#f8e4b6;stroke-width:3;filter:drop-shadow(0 2px 3px #000)}
+.army-marker text{font: bold 19px Georgia;text-anchor:middle;fill:#fff}
+.army-marker.friendly circle{fill:#426a36}.army-marker.hostile circle{fill:#a32222;stroke:#ffb4a9}
+.map-legend{position:sticky;bottom:0;background:#100d0beF;border-top:1px solid #765a32}
+@media(max-width:850px){.map{height:72vh;min-height:560px}.map svg{width:760px;max-width:none}.maplabel{font-size:18px}}
+@media(max-width:480px){.map{height:70vh;min-height:540px}.map svg{width:760px}.map-zoom button{min-width:42px;min-height:42px}}
