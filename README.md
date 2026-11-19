@@ -45,3 +45,12 @@ Ajout d'un moteur d'événements dynamiques liés à la faction jouée : tension
 - Le moteur de campagne et le format des sauvegardes ne sont pas réinitialisés.
 
 **Limite connue :** cette étape améliore fortement la représentation et la lecture de la carte actuelle, mais ne constitue pas encore une reconstruction géographique exhaustive et certifiée de toutes les régions et colonies de Total War: Warhammer. Les provinces et positions existantes restent à vérifier et à compléter à partir de références cartographiques fiables.
+
+
+## Version 2.1 — Batailles tactiques 3D
+- Les engagements de campagne ouvrent désormais un champ de bataille tactique.
+- Grille hexagonale, déplacement au tour par tour et sélection de régiments.
+- Caméra 3D rotative au glisser, zoom à la molette/pincement natif navigateur, commandes de rotation.
+- Figurines 3D stylisées générées avec des primitives, sans téléchargement d'assets supplémentaires.
+- Les pertes et les résultats de victoire/défaite sont reportés dans la campagne.
+- Three.js est chargé depuis un CDN : une connexion internet est nécessaire pour le moteur 3D.
