@@ -85,40 +85,38 @@ function renderMap(){
  if(!base.dataset.ready){
   base.innerHTML=`
   <defs>
-   <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#657f83"/><stop offset="1" stop-color="#263f47"/></linearGradient>
-   <linearGradient id="land" x2="0.8" y2="1"><stop stop-color="#e5d4a8"/><stop offset="1" stop-color="#b89c6d"/></linearGradient>
-   <pattern id="papergrain" width="90" height="90" patternUnits="userSpaceOnUse"><circle cx="12" cy="18" r="1" fill="#745d3c" opacity=".14"/><circle cx="60" cy="52" r="1.2" fill="#fff2cf" opacity=".2"/><path d="M0 80 Q25 72 45 83 T90 78" fill="none" stroke="#806b48" opacity=".08"/></pattern>
-   <filter id="inkshadow"><feGaussianBlur stdDeviation="2"/></filter>
+   <linearGradient id="sea" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#718b89"/><stop offset=".55" stop-color="#405f62"/><stop offset="1" stop-color="#263e43"/></linearGradient>
+   <linearGradient id="land" x1="0" y1="0" x2=".85" y2="1"><stop stop-color="#ead9b4"/><stop offset=".48" stop-color="#d7c397"/><stop offset="1" stop-color="#b79c70"/></linearGradient>
+   <pattern id="sea-lines" width="44" height="32" patternUnits="userSpaceOnUse"><path d="M0 8 Q11 3 22 8 T44 8 M-8 24 Q3 19 14 24 T36 24" fill="none" stroke="#d3d8c5" stroke-width=".8" opacity=".16"/></pattern>
+   <pattern id="papergrain" width="80" height="80" patternUnits="userSpaceOnUse"><circle cx="12" cy="18" r="1.2" fill="#755d3a" opacity=".2"/><circle cx="58" cy="51" r="1" fill="#fff2cf" opacity=".3"/><path d="M0 70 Q22 63 42 72 T80 69" fill="none" stroke="#806b48" opacity=".11"/></pattern>
+   <pattern id="forest-hatch" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M2 16 L9 3 L16 16 M9 3 L9 18" fill="none" stroke="#536344" stroke-width="1" opacity=".23"/></pattern>
+   <clipPath id="landclip"><path d="M72 235 Q86 179 160 151 L252 103 375 63 510 73 605 48 734 62 844 42 955 62 1005 155 1023 270 1042 390 1021 520 1048 665 1017 814 955 925 871 982 742 1000 622 980 510 1008 378 986 256 963 159 913 93 835 55 716 45 584 58 451Z"/></clipPath>
   </defs>
-  <rect width="1080" height="1040" fill="url(#sea)"/>
-  <path d="M75 230 Q105 170 185 150 L270 90 415 30 560 60 710 32 855 45 965 20 1020 180 1045 330 1030 535 1060 730 1015 920 920 1000 760 1020 610 1005 470 1020 300 985 160 950 70 850 25 690 38 535 60 390Z" fill="url(#land)" stroke="#5b4932" stroke-width="10"/>
-  <path d="M75 230 Q105 170 185 150 L270 90 415 30 560 60 710 32 855 45 965 20 1020 180 1045 330 1030 535 1060 730 1015 920 920 1000 760 1020 610 1005 470 1020 300 985 160 950 70 850 25 690 38 535 60 390Z" fill="url(#papergrain)"/>
-  <g class="terrain-lines" fill="none" stroke="#806847" stroke-width="2" opacity=".45"><path d="M100 250 Q190 210 270 245 T430 220 M120 850 Q220 800 310 830 T490 805 M570 930 Q680 880 790 910 T960 870"/><path d="M300 140 Q380 110 460 145 T620 130 M700 170 Q790 130 890 165"/></g>
-  <g class="mountains" fill="#8e8067" stroke="#5b4c38" stroke-width="2">
-   ${Array.from({length:15},(_,i)=>{let x=430+i*31,y=95+(i%3)*17;return `<path d="M${x-17} ${y+35} l17 -42 17 42 -17 -9Z"/><path d="M${x-7} ${y+5} l7 -12 7 12" fill="#eee0bd" stroke="none"/>`}).join('')}
-   ${Array.from({length:13},(_,i)=>{let x=850+(i%4)*25,y=640+Math.floor(i/4)*38;return `<path d="M${x-17} ${y+35} l17 -42 17 42 -17 -9Z"/>`}).join('')}
-   ${Array.from({length:9},(_,i)=>{let x=185+i*25,y=770+(i%2)*18;return `<path d="M${x-15} ${y+30} l15 -38 15 38 -15 -8Z"/>`}).join('')}
+  <rect width="1080" height="1040" fill="url(#sea)"/><rect width="1080" height="1040" fill="url(#sea-lines)"/>
+  <g fill="#d5dfd0" opacity=".16" font-family="Georgia" font-style="italic" letter-spacing="5"><text x="90" y="510" font-size="31">MER DES GRIFFES</text><text x="70" y="780" font-size="27">GRAND OCÉAN</text><text x="820" y="950" font-size="25">MER NOIRE</text><text x="820" y="160" font-size="22">AU-DELÀ DU MONDE</text></g>
+  <path d="M72 235 Q86 179 160 151 L252 103 375 63 510 73 605 48 734 62 844 42 955 62 1005 155 1023 270 1042 390 1021 520 1048 665 1017 814 955 925 871 982 742 1000 622 980 510 1008 378 986 256 963 159 913 93 835 55 716 45 584 58 451Z" fill="url(#land)" stroke="#493a29" stroke-width="13"/>
+  <path d="M72 235 Q86 179 160 151 L252 103 375 63 510 73 605 48 734 62 844 42 955 62 1005 155 1023 270 1042 390 1021 520 1048 665 1017 814 955 925 871 982 742 1000 622 980 510 1008 378 986 256 963 159 913 93 835 55 716 45 584 58 451Z" fill="url(#papergrain)"/>
+  <g clip-path="url(#landclip)">
+   <g class="terrain-relief" fill="none" stroke="#8c7048" stroke-width="1.5" opacity=".35">
+    <path d="M75 290 Q150 250 225 275 T380 265 T520 290 M60 315 Q145 275 230 302 T390 292 T540 315"/><path d="M80 660 Q170 620 250 650 T420 640 T565 670 M70 690 Q170 650 255 680 T425 670 T580 700"/><path d="M510 190 Q600 155 690 180 T870 175 T1010 210 M500 215 Q600 180 700 207 T880 202 T1020 240"/><path d="M660 840 Q760 795 850 825 T1010 810 M645 870 Q760 825 860 855 T1000 845"/><path d="M240 450 Q315 410 390 440 T520 430 M225 475 Q315 435 400 465 T535 455"/>
+    <path d="M125 360 Q190 330 250 355 T365 350 M135 385 Q200 355 260 380 T375 375 M600 570 Q675 535 750 560 T900 550 M590 595 Q675 560 760 585 T910 575"/>
+   </g>
+   <g class="terrain-forests" fill="#506143" stroke="#3d5037" stroke-width="1.3" opacity=".88">
+    ${Array.from({length:22},(_,i)=>{let x=285+(i%6)*27,y=330+Math.floor(i/6)*28;return `<path d="M${x} ${y+13} l-10 16 h20Z M${x} ${y+5} l-7 13 h14Z"/>`}).join('')}
+    ${Array.from({length:18},(_,i)=>{let x=190+(i%6)*26,y=535+Math.floor(i/6)*26;return `<path d="M${x} ${y+13} l-10 16 h20Z M${x} ${y+5} l-7 13 h14Z"/>`}).join('')}
+    ${Array.from({length:28},(_,i)=>{let x=490+(i%7)*27,y=650+Math.floor(i/7)*27;return `<path d="M${x} ${y+13} l-10 16 h20Z M${x} ${y+5} l-7 13 h14Z"/>`}).join('')}
+    ${Array.from({length:18},(_,i)=>{let x=115+(i%6)*26,y=760+Math.floor(i/6)*27;return `<path d="M${x} ${y+13} l-10 16 h20Z M${x} ${y+5} l-7 13 h14Z"/>`}).join('')}
+   </g>
+   <g class="terrain-mountains" fill="#81745f" stroke="#514735" stroke-width="2">
+    ${Array.from({length:17},(_,i)=>{let x=320+i*29,y=125+(i%3)*14;return `<path d="M${x-20} ${y+43} L${x} ${y-10} L${x+22} ${y+43} L${x+4} ${y+31}Z"/><path d="M${x-7} ${y+8} L${x} ${y-10} L${x+8} ${y+10} L${x+1} ${y+5}Z" fill="#eee2c6" stroke="none"/>`}).join('')}
+    ${Array.from({length:21},(_,i)=>{let x=820+(i%5)*34,y=340+Math.floor(i/5)*52;return `<path d="M${x-22} ${y+46} L${x} ${y-14} L${x+24} ${y+46} L${x+3} ${y+32}Z"/><path d="M${x-8} ${y+9} L${x} ${y-14} L${x+9} ${y+10} L${x+1} ${y+4}Z" fill="#eee2c6" stroke="none"/>`}).join('')}
+    ${Array.from({length:12},(_,i)=>{let x=245+i*25,y=805+(i%3)*19;return `<path d="M${x-18} ${y+36} L${x} ${y-8} L${x+19} ${y+36} L${x+1} ${y+27}Z"/>`}).join('')}
+   </g>
+   <g class="terrain-rivers" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M410 205 C405 270 390 320 385 375 S365 475 370 540 S355 625 405 700 S430 770 455 835" stroke="#e5e0c7" stroke-width="12"/><path d="M410 205 C405 270 390 320 385 375 S365 475 370 540 S355 625 405 700 S430 770 455 835" stroke="#5f8790" stroke-width="7"/><path d="M565 355 C545 420 570 475 590 525 S610 620 600 700 S635 795 665 870" stroke="#e5e0c7" stroke-width="9"/><path d="M565 355 C545 420 570 475 590 525 S610 620 600 700 S635 795 665 870" stroke="#648b91" stroke-width="5"/><path d="M710 430 C690 485 730 535 770 575 S825 650 860 705" stroke="#648b91" stroke-width="5"/><path d="M245 370 C285 395 310 445 350 480" stroke="#648b91" stroke-width="4"/></g>
+   <g class="terrain-roads" fill="none" stroke="#8a6740" stroke-width="3" stroke-dasharray="8 8" opacity=".65"><path d="M155 600 Q260 570 370 540 T600 525 T800 575"/><path d="M370 540 Q430 650 455 835 T665 870"/><path d="M600 525 Q710 450 850 430"/></g>
   </g>
-  <g class="forests" fill="#586b45" stroke="#40543a" stroke-width="1" opacity=".9">
-   ${Array.from({length:90},(_,i)=>{let x=90+(i*83)%820,y=150+(i*137)%760;return `<path d="M${x} ${y+12} l-9 13 h18Z M${x} ${y+5} l-7 12 h14Z"/>`}).join('')}
-  </g>
-  <g class="rivers" fill="none" stroke-linecap="round"><path d="M430 160 C420 260 390 340 370 430 S350 540 355 585 S330 670 430 760" stroke="#527d91" stroke-width="9"/><path d="M610 340 C585 420 620 500 610 625 S660 730 670 865" stroke="#527d91" stroke-width="7"/><path d="M720 440 C700 510 760 575 850 690" stroke="#527d91" stroke-width="5"/><path d="M250 300 C300 340 310 410 355 470" stroke="#527d91" stroke-width="5"/></g>
-  <g class="water-labels" fill="#d9e0d2" font-family="Georgia" font-style="italic" letter-spacing="4" opacity=".9"><text x="75" y="440" font-size="26">GRAND OCÉAN</text><text x="95" y="210" font-size="22">MER DES GRIFFES</text><text x="745" y="985" font-size="24">MER NOIRE</text><text x="845" y="100" font-size="22">DÉSERTS DU NORD</text></g>
-
-  <g class="atlas-relief" fill="none" stroke="#786344" stroke-width="2" opacity=".28">
-   <path d="M90 285 Q145 250 205 278 T330 270 T455 292 M80 310 Q150 275 215 305 T345 296 T470 320"/>
-   <path d="M110 700 Q175 650 245 685 T380 670 T510 700 M95 730 Q175 680 250 715 T390 700 T520 730"/>
-   <path d="M565 180 Q640 145 710 178 T850 170 T980 205 M560 205 Q640 170 715 205 T860 198 T990 232"/>
-   <path d="M690 800 Q760 760 835 790 T970 780 M675 825 Q760 785 845 815 T985 805"/>
-   <path d="M260 430 Q300 395 345 420 T430 410 M250 452 Q300 418 350 442 T440 432"/>
-  </g>
-  <g class="terrain-hills" fill="#927a51" stroke="#6e593b" stroke-width="1.5" opacity=".62">
-   ${Array.from({length:34},(_,i)=>{let x=110+(i*97)%850,y=235+(i*71)%650;return `<path d="M${x-12} ${y+7} Q${x} ${y-12} ${x+12} ${y+7} Q${x} ${y+2} ${x-12} ${y+7}Z"/>`}).join('')}
-  </g>
-  <g class="coast-ink" fill="none" stroke="#f0dfb9" stroke-width="2" opacity=".55">
-   <path d="M75 230 Q105 170 185 150 L270 90 415 30 560 60 710 32 855 45 965 20 1020 180 1045 330 1030 535 1060 730 1015 920 920 1000 760 1020 610 1005 470 1020 300 985 160 950 70 850 25 690 38 535 60 390Z" stroke-dasharray="3 9"/>
-  </g>
-  <g class="map-frame-ornament" fill="none" stroke="#765b36" stroke-width="3"><rect x="12" y="12" width="1056" height="1016"/><rect x="20" y="20" width="1040" height="1000" stroke="#d8bd83" stroke-width="1"/></g>
+  <g class="water-labels" fill="#d7dfd1" font-family="Georgia" font-style="italic" letter-spacing="4" opacity=".86"><text x="82" y="555" font-size="23">GRAND OCÉAN</text><text x="78" y="205" font-size="21">MER DES GRIFFES</text></g>
+  <g class="map-frame-ornament" fill="none" stroke="#765b36" stroke-width="3"><rect x="12" y="12" width="1056" height="1016"/><rect x="20" y="20" width="1040" height="1000" stroke="#e1c991" stroke-width="1"/><path d="M28 75 L28 28 75 28 M1005 28 L1052 28 1052 75 M28 965 L28 1012 75 1012 M1005 1012 L1052 1012 1052 965" stroke="#d4b77c" stroke-width="5"/></g>
   <g class="map-title-cartouche"><rect x="390" y="22" width="300" height="42" rx="4" fill="#e6d6b4" stroke="#5b452a" stroke-width="3"/><text x="540" y="50" text-anchor="middle" font-family="Georgia" font-size="22" font-weight="bold" fill="#392a1b" letter-spacing="3">LE VIEUX MONDE</text></g>
   <g transform="translate(1000 100)" fill="#59442c" stroke="#f0dfb9" stroke-width="1"><path d="M0 -38 L9 -5 0 -12 -9 -5Z M0 38 L9 5 0 12 -9 5Z M-38 0 L-5 -9 -12 0 -5 9Z M38 0 L5 -9 12 0 5 9Z"/><circle r="5"/><text x="0" y="-48" text-anchor="middle" font-size="14" stroke="none">N</text></g>`;
   base.dataset.ready='1';
@@ -204,6 +202,7 @@ function exportSave(){let blob=new Blob([JSON.stringify(S,null,2)],{type:'applic
 function importSave(file){let r=new FileReader();r.onload=()=>{try{let s=JSON.parse(r.result);if(!s.provinces||!s.armies||!s.faction)throw 0;S=migrateCampaign(s);S.version=4;selected=S.provinces.find(p=>p.owner===S.faction)?.id||S.provinces[0].id;$('start').classList.add('hidden');$('game').classList.remove('hidden');render();toast('Campagne importée.')}catch(e){toast('Fichier invalide.')}};r.readAsText(file)}
 let mapZoom=1,mapPan={x:0,y:0};function applyMapZoom(){const svg=$('map');const w=1080/mapZoom,h=1040/mapZoom;const x=(1080-w)/2-mapPan.x,y=(1040-h)/2-mapPan.y;svg.setAttribute('viewBox',`${x} ${y} ${w} ${h}`)}$('zoomIn').onclick=()=>{mapZoom=Math.min(3.2,mapZoom+.25);applyMapZoom()};$('zoomOut').onclick=()=>{mapZoom=Math.max(1,mapZoom-.25);applyMapZoom()};$('zoomReset').onclick=()=>{mapZoom=1;mapPan={x:0,y:0};applyMapZoom()};
 let labelsVisible=true;$('toggleLabels').onclick=()=>{labelsVisible=!labelsVisible;$('map').classList.toggle('labels-hidden',!labelsVisible);$('toggleLabels').setAttribute('aria-pressed',String(labelsVisible));$('toggleLabels').textContent=labelsVisible?'Noms':'Noms masqués';};
+let mapMode='relief';$('mapMode').onclick=()=>{mapMode=mapMode==='relief'?'politique':mapMode==='politique'?'routes':'relief';$('map').classList.remove('mode-relief','mode-politique','mode-routes');$('map').classList.add('mode-'+mapMode);$('mapMode').textContent=mapMode==='relief'?'Relief':mapMode==='politique'?'Politique':'Routes';};
 let drag=null;$('map').addEventListener('pointerdown',e=>{if(e.target.closest('.province-group,.settlement,.army-marker'))return;drag={x:e.clientX,y:e.clientY,px:mapPan.x,py:mapPan.y};$('map').setPointerCapture(e.pointerId)});$('map').addEventListener('pointermove',e=>{if(!drag)return;const r=$('map').getBoundingClientRect(),scale=1080/r.width/mapZoom;mapPan.x=drag.px-(e.clientX-drag.x)*scale;mapPan.y=drag.py-(e.clientY-drag.y)*scale;applyMapZoom()});$('map').addEventListener('pointerup',()=>drag=null);$('map').addEventListener('wheel',e=>{e.preventDefault();mapZoom=Math.max(1,Math.min(3.2,mapZoom+(e.deltaY<0?.15:-.15)));applyMapZoom()},{passive:false});
 $('begin').onclick=begin;$('move').onclick=moveToggle;$('endTurn').onclick=endTurn;$('export').onclick=exportSave;$('import').onchange=e=>e.target.files[0]&&importSave(e.target.files[0]);$('nav').querySelectorAll('button').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));bootCards();
 function migrateCampaign(s){if(!s||!s.provinces)return s;const aliases={couronne:'bretonnia',karak:'worldsedge',chaos:'norsca'};s.provinces=s.provinces.map(p=>({...p,id:aliases[p.id]||p.id}));const ids=new Set(s.provinces.map(p=>p.id));P.forEach(np=>{if(!ids.has(np.id))s.provinces.push({...np,settlements:(np.settlements||[]).map(c=>({...c,owner:np.owner})),buildings:[],level:1})});s.provinces=s.provinces.map(p=>{let np=P.find(x=>x.id===p.id);return np?{...np,...p,settlements:p.settlements||np.settlements||[],pts:np.pts,x:np.x,y:np.y,near:np.near,terrain:np.terrain}:p});s.armies.forEach(a=>{a.loc=aliases[a.loc]||a.loc});if(!s.armies.some(a=>a.owner==='chaos'))s.armies.push({id:'K1',owner:'chaos',loc:'norsca',units:[{name:'Maraudeurs',count:300}],moved:0});if(!s.armies.some(a=>a.owner==='vampires'))s.armies.push({id:'V1',owner:'vampires',loc:'sylvania',units:[{name:'Squelettes',count:260}],moved:0});if(!s.armies.some(a=>a.owner==='greenskins'))s.armies.push({id:'G1',owner:'greenskins',loc:'badlands',units:[{name:'Orques',count:300}],moved:0});if(!s.armies.some(a=>a.owner==='dwarfs'))s.armies.push({id:'D1',owner:'dwarfs',loc:'worldsedge',units:[{name:'Guerriers nains',count:240}],moved:0});return s}

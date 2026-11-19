@@ -54,3 +54,26 @@
 .map-title{border-bottom:1px solid #8d7044;margin-bottom:7px}
 .map-compass{background:#21180dcc;border:1px solid #b18a50;border-radius:50%;width:48px;height:48px;padding-top:2px;box-sizing:border-box}
 @media(max-width:600px){.maplabel{font-size:17px}.city-label{font-size:14px}.map-frame{padding:5px}}
+
+
+/* AGE OF CONQUEST v2.0 — refonte cartographique */
+#map{background:#334e51}
+#mapbase .terrain-mountains{filter:drop-shadow(2px 3px 1px #4b3928aa)}
+#mapbase .terrain-forests{filter:drop-shadow(1px 2px 1px #293a2c88)}
+#mapbase .terrain-rivers path:first-child{opacity:.8}
+#mapbase .terrain-roads{transition:opacity .2s}
+#map .region{stroke-width:2;stroke-dasharray:none;fill-opacity:.22}
+#map .region.own{fill:#c49a42;stroke:#8c642c}
+#map .region.enemy{fill:#a84a43;stroke:#7f302c}
+#map .region.neutral{fill:#71815d;stroke:#566344}
+#map .region.selected{fill-opacity:.52;stroke:#fff0bd;stroke-width:4;filter:drop-shadow(0 0 4px #fff0a0)}
+#map .maplabel{font:700 15px Georgia,serif;letter-spacing:.2px;fill:#352619;stroke:#f4e6c5;stroke-width:4px;paint-order:stroke;stroke-linejoin:round}
+#map .city-label{font:700 12px Georgia,serif;fill:#2e2117;stroke:#f4e5c2;stroke-width:3.5px;paint-order:stroke}
+#map.mode-politique #mapbase .terrain-mountains,#map.mode-politique #mapbase .terrain-forests,#map.mode-politique #mapbase .terrain-relief{opacity:.28}
+#map.mode-politique .region{fill-opacity:.48;stroke-width:2.7}
+#map.mode-routes #mapbase .terrain-roads{opacity:1;stroke-width:5}
+#map.mode-routes #mapbase .terrain-rivers{opacity:.38}
+#map.mode-routes .region{fill-opacity:.13}
+#mapMode{font-size:10px;min-width:58px;padding:8px 9px}
+.map-zoom{flex-direction:column;align-items:flex-start}
+@media(max-width:600px){#map .maplabel{font-size:18px}#map .city-label{font-size:15px}#mapMode,#toggleLabels{min-height:40px}}
